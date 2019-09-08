@@ -62,11 +62,19 @@ class TicTacToe
   end
     
   def over?
+<<<<<<< HEAD
     won? || draw?
   end
     
   def winner
     turn_count % 2 == 0 ? "O" : "X" if won?
+=======
+    won? || full?
+  end
+    
+  def winner
+    !current_player if won?
+>>>>>>> b4fbff096f6031e21ff2dcfa024af5d31650255c
   end
     
   def move(pos, mark = "X") 
@@ -85,6 +93,7 @@ class TicTacToe
   end
   
   def play
+<<<<<<< HEAD
     9.times do
       unless over?
         turn
@@ -93,6 +102,15 @@ class TicTacToe
           puts "Congratulations, #{winner}!"
       elsif draw?
         puts "Cat's game!"
+=======
+    loop do
+      if won?
+        puts "Congratulations #{winner}!"
+      elsif draw?
+        puts "Cat's Game!"
+      elsif over? == false
+        turn
+>>>>>>> b4fbff096f6031e21ff2dcfa024af5d31650255c
       end
     end
   end
